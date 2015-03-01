@@ -1,0 +1,3 @@
+ownnotes:
+    resource: @ownnotesBundle/Controller/
+    type:     annotation
