@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{% import 'lanigerBootstrapBundle::bootstrap.macro.twig' as bootstrap %}
 <html>
     <head>
         {% include 'lanigerBootstrapBundle::assets.include.twig' %}
     </head>
     <body>
-        Hello {{ name }}!
+        Hello {{ name|default('as') }}!
     </body>
 </html>

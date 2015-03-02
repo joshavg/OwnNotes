@@ -2,8 +2,3 @@ lanigerownnotes:
     resource: "@lanigerownnotesBundle/Controller/"
     type:     annotation
     prefix:   /
-
-#laniger_bootstrap:
-#    resource: "@lanigerBootstrapBundle/Controller/"
-#    type:     annotation
-#    prefix:   /
