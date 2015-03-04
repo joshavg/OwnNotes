@@ -34,6 +34,13 @@ class Note
      * @ORM\Column(name="content", type="text")
      */
     private $content;
+    
+    /**
+     * @var User
+     * 
+     * @ORM\ManyToOne(targetEntity="User")
+     */
+    private $user;
 
 
     /**
@@ -90,5 +97,28 @@ class Note
     public function getContent()
     {
         return $this->content;
+    }
+    
+    /**
+     * Get User
+     * 
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \laniger\ownnotesBundle\Entity\User $user
+     * @return User
+     */
+    public function setUser(\laniger\ownnotesBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
     }
 }

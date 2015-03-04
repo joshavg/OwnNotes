@@ -1,12 +1,28 @@
 security:
-    providers:
-        in_memory:
-            memory: ~
 
-    firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
-            security: false
+  encoders:
+    laniger\ownnotesBundle\Entity\User:
+      id: password_hash_encoder
+      
+  role_hierarchy:
+    ROLE_USER: [ ]
+    ROLE_ADMIN: [ ROLE_USER ]
+      
+  providers:
+    database:
+      entity:
+        class: laniger\ownnotesBundle\Entity\User
+        property: nick
 
-        default:
-            anonymous: ~
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt|error)|css|images|js)/
+      security: false
+    login_firewall:
+      pattern: "^/[a-z]{2}/login$"
+      anonymous: ~
+    default:
+      form_login:
+        login_path: login_route
+        check_path: login_ch
+        

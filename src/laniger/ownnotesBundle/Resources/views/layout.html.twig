@@ -2,10 +2,11 @@
 {% import 'lanigerBootstrapBundle::bootstrap.macro.twig' as bootstrap %}
 <html>
     <head>
+        <title>ownnotes</title>
         {% include 'lanigerBootstrapBundle::assets.include.twig' %}
+        {% block head %}{% endblock %}
     </head>
     <body>
-        Hello {{ name|default('as') }}!
         {% block body %}{% endblock %}
     </body>
 </html>

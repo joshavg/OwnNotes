@@ -1,3 +1,19 @@
+login_route:
+    path: /{_locale}/login
+    defaults:
+        _controller: lanigerownnotesBundle:Login:login
+        _locale: en
+        
+login_check:
+    path: /{_locale}/login_check
+
+root_default:
+  path: /
+  defaults:
+    _controller: FrameworkBundle:Redirect:redirect
+    permanent: true
+    route: login_route
+
 lanigerownnotes:
     resource: "@lanigerownnotesBundle/Controller/"
     type:     annotation
